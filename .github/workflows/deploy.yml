@@ -36,7 +36,7 @@ jobs:
           remote_host: ${{ env.USER }}@${{ env.HOST }}:/home/${{ env.USER }}/${{ env.PROJECT_NAME }}
           remote_path: '/home/${{ env.USER }}/${{ env.PROJECT_NAME }}/'
           ssh_private_key: ${{ env.SSH_PRIVATE_KEY }}
-          args: '-r -C'
+          args: 'scp -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} -r ./prezzo-backend ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/prezzo-backend '
 
       - name: SSH into VPS and run docker-compose
         uses: appleboy/ssh-action@master
