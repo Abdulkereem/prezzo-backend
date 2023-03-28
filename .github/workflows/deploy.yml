@@ -9,6 +9,7 @@ env:
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   USER: ${{ secrets.USER }}
   HOST: ${{ secrets.REMOTE_HOST }}
+  PASSWORD: ${{ secrets.SSH_PASSWORD }}
   PROJECT_NAME: my_django_project
 
 jobs:
@@ -43,6 +44,7 @@ jobs:
         with:
           host: ${{ env.HOST }}
           username: ${{ env.USER }}
+          password: ${{ env.PASSWORD }}
           key: ${{ env.SSH_PRIVATE_KEY }}
           port: 22
           script: |
