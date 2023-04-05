@@ -2,3 +2,4 @@ django
 django-ckeditor
 djangorestframework
 Pillow
+django-cors-headers

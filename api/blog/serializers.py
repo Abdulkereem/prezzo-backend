@@ -4,4 +4,12 @@ from .models import Blog
 class BlogPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['title','subtitle']
+        fields = ['title','subtitle','banner','uuid']
+
+
+
+
+class SinglePostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Blog
+        fields = ['title','subtitle','banner','article','author']
